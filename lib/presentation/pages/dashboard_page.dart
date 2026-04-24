@@ -4,6 +4,7 @@ import '../providers/auth_provider.dart';
 import '../providers/product_provider.dart';
 import '../../core/constants/app_colors.dart';
 import 'product_detail_page.dart';
+import 'cart_page.dart';
 import 'login_page.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   void initState() {
     super.initState();
+
     // Tarik data saat halaman pertama kali dibuka
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Provider.of<ProductProvider>(context, listen: false).fetchProducts();
@@ -37,6 +39,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
     return Scaffold(
       backgroundColor: AppColors.background,
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -50,6 +53,18 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
         ),
         actions: [
+          // ✅ Tombol Keranjang
+          IconButton(
+            icon: const Icon(Icons.shopping_bag_outlined, color: Colors.black),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const CartPage()),
+              );
+            },
+          ),
+
+          // ✅ Tombol Logout
           IconButton(
             icon: const Icon(Icons.logout, color: Colors.black),
             onPressed: () async {
@@ -71,6 +86,7 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
         ],
       ),
+
       body: productProvider.isLoading
           ? const Center(
               child: CircularProgressIndicator(color: Colors.black),
