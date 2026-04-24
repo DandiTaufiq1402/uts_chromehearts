@@ -7,11 +7,12 @@ import 'firebase_options.dart';
 import 'core/theme/app_theme.dart';
 import 'presentation/providers/auth_provider.dart';
 import 'presentation/providers/product_provider.dart';
-import 'presentation/pages/login_page.dart'; // <- Ini yang tadi bikin error karena belum ada
+import 'presentation/providers/cart_provider.dart';
+import 'presentation/pages/login_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Inisialisasi Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -26,7 +27,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      // Mendaftarkan semua state management
       providers: [
         ChangeNotifierProvider(
           create: (_) => AuthProvider()..checkAuthStatus(),
@@ -34,13 +34,15 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => ProductProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => CartProvider(),
+        ),
       ],
       child: MaterialApp(
         title: 'Chrome Hearts',
         theme: AppTheme.light,
         debugShowCheckedModeBanner: false,
-        // Titik koma tidak boleh ada di sini, wajib koma
-        home: const LoginPage(), 
+        home: const LoginPage(),
       ),
     );
   }
