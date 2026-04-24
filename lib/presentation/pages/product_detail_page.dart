@@ -20,7 +20,13 @@ class ProductDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(product.imageUrl, width: double.infinity, height: 400, fit: BoxFit.cover),
+            // Pasang sabuk pengaman HANYA di imageUrl
+            Image.network(
+              product.imageUrl ?? 'https://via.placeholder.com/400x400.png?text=No+Image', 
+              width: double.infinity, 
+              height: 400, 
+              fit: BoxFit.cover
+            ),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -32,6 +38,7 @@ class ProductDetailPage extends StatelessWidget {
                   const SizedBox(height: 20),
                   const Text("Description", style: TextStyle(color: Colors.white, fontSize: 18)),
                   const SizedBox(height: 10),
+                  // Langsung pakai product.description tanpa ??
                   Text(product.description, style: const TextStyle(color: Colors.grey, height: 1.5)),
                   const SizedBox(height: 40),
                   SizedBox(
