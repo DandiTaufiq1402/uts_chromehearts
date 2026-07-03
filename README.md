@@ -24,9 +24,15 @@ Pencinta *streetwear* seringkali kesulitan menemukan platform yang menjual produ
 
 | Home / Catalog | Product Details | Cart & Checkout |
 | :---: | :---: | :---: |
-| <img src="https://via.placeholder.com/250x500.png?text=Home+Screen" width="200"/> | <img src="https://via.placeholder.com/250x500.png?text=Detail+Screen" width="200"/> | <img src="https://via.placeholder.com/250x500.png?text=Cart+Screen" width="200"/> |
+<img width="610" height="1356" alt="WhatsApp Image 2026-07-03 at 19 27 19" src="https://github.com/user-attachments/assets/d3ca6883-896d-46c2-9833-0567b38fc077" />
+<img width="610" height="1356" alt="WhatsApp Image 2026-07-03 at 19 27 19 (3)" src="https://github.com/user-attachments/assets/238ae7ee-e8d8-427b-b632-1c6f66830139" />
+<img width="610" height="1356" alt="WhatsApp Image 2026-07-03 at 19 27 19 (2)" src="https://github.com/user-attachments/assets/2b5ab31a-0084-4df9-91f2-db77a660f9e7" />
+<img width="610" height="1356" alt="WhatsApp Image 2026-07-03 at 19 27 19 (1)" src="https://github.com/user-attachments/assets/d733c394-13ab-431c-94bb-fbcb8520b0b3" />
+<img width="610" height="1356" alt="WhatsApp Image 2026-07-03 at 19 27 18" src="https://github.com/user-attachments/assets/da0fa1a7-109e-4162-94ed-2f38e15fe8f9" />
+<img width="610" height="1356" alt="WhatsApp Image 2026-07-03 at 19 27 18 (3)" src="https://github.com/user-attachments/assets/776b12ea-6037-4eed-af9e-190b71635a62" />
+<img width="610" height="1356" alt="WhatsApp Image 2026-07-03 at 19 27 18 (2)" src="https://github.com/user-attachments/assets/c5f1b198-b50e-46f8-b1d1-4b0d9a984228" />
+<img width="610" height="1356" alt="WhatsApp Image 2026-07-03 at 19 27 18 (1)" src="https://github.com/user-attachments/assets/79eb75b5-6584-43c7-8dcd-9af8aa91710f" />
 
-*(Ganti link gambar placeholder di atas dengan screenshot/GIF asli aplikasi kamu)*
 
 ## 🛠️ Tech Stack
 
