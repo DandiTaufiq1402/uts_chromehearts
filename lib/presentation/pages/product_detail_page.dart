@@ -46,11 +46,20 @@ class ProductDetailPage extends StatelessWidget {
                     height: 50,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-                      onPressed: () {
-                        context.read<CartProvider>().addItem(product);
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Item added to cart'), duration: Duration(seconds: 1)),
-                        );
+                      onPressed: () async {
+                        final success = await context.read<CartProvider>().addToCart(product.id, 1);
+                        if (!context.mounted) return;
+                        
+                        if (success) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Item added to cart', style: TextStyle(color: Colors.white)), backgroundColor: Colors.green, duration: Duration(seconds: 1)),
+                          );
+                        } else {
+                          final error = context.read<CartProvider>().error ?? 'Failed to add item';
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(error, style: const TextStyle(color: Colors.white)), backgroundColor: Colors.red, duration: const Duration(seconds: 3)),
+                          );
+                        }
                       },
                       child: const Text("ADD TO CART", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
                     ),

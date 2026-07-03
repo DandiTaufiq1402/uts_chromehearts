@@ -59,7 +59,18 @@ class _RegisterPageState extends State<RegisterPage> {
               isPassword: true,
               prefixIcon: const Icon(Icons.lock_outline),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
+            if (authProvider.errorMessage != null)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15),
+                child: Text(
+                  authProvider.errorMessage!,
+                  style: const TextStyle(
+                    color: Colors.red,
+                    fontSize: 13,
+                  ),
+                ),
+              ),
             CustomButton(
               text: 'REGISTER',
               isLoading: authProvider.isLoading,
